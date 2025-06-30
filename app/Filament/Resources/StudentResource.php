@@ -21,7 +21,11 @@ class StudentResource extends Resource
 {
     protected static ?string $model = Student::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
+
+    protected static ?string $navigationLabel = 'Mahasiswa';
+
+    protected static ?string $modelLabel = "Mahasiswa ";
 
     public static function form(Form $form): Form
     {
@@ -54,7 +58,7 @@ class StudentResource extends Resource
                 TextColumn::make('gender')
                     ->label('Jenis Kelamin')
                     ->formatStateUsing(function (string $state) {
-                        return $state === 'L' ? 'Laki-Laki' : 'Perempuan';
+                        return $state === 'L' ? 'Laki - Laki' : 'Perempuan';
                     }),
             ])
             ->filters([
