@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('nim')->unique();
             $table->string('name');
-            $table->enum('gender', ['L', 'P']);
             $table->timestamps();
         });
     }

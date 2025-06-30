@@ -20,14 +20,12 @@ class StudentSeeder extends Seeder
                 "password" => bcrypt("userpass"),
                 "nim" => "2141765899",
                 "name" => "user",
-                "gender" => GenderTypeEnum::MALE->value
             ],
             [
                 "email" => "arya@gmail.com",
                 "password" => bcrypt("userpass"),
                 "nim" => "2141765898",
                 "name" => "Arya Lukman",
-                "gender" => GenderTypeEnum::MALE->value
             ],
         ]);
     }

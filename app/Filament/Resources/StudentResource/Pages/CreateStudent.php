@@ -9,4 +9,14 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateStudent extends CreateRecord
 {
     protected static string $resource = StudentResource::class;
+
+    public function getTitle(): string
+    {
+        return 'Tambah Mahasiswa'; // Your custom page title
+    }
+
+        protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

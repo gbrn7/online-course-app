@@ -15,7 +15,7 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-
+use Illuminate\Database\Eloquent\Builder;
 
 class StudentResource extends Resource
 {
@@ -35,14 +35,12 @@ class StudentResource extends Resource
                 TextInput::make('password')->password()->required(),
                 TextInput::make('nim')->unique()->required()->label('NIM'),
                 TextInput::make('name')->required()->label('Nama'),
-                Select::make('gender')
-                    ->options([
-                        'L' => 'Laki - Laki',
-                        'P' => 'Perempuan',
-                    ])
-                    ->label('Jenis Kelamin')
-                    ->required(),
             ]);
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->orderBy('id', 'desc');
     }
 
     public static function table(Table $table): Table
@@ -52,21 +50,9 @@ class StudentResource extends Resource
                 TextColumn::make('nim')
                     ->label('NIM')
                     ->searchable(),
-                TextColumn::make('email'),
+                TextColumn::make('email')->searchable(),
                 TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('gender')
-                    ->label('Jenis Kelamin')
-                    ->formatStateUsing(function (string $state) {
-                        return $state === 'L' ? 'Laki - Laki' : 'Perempuan';
-                    }),
-            ])
-            ->filters([
-                SelectFilter::make('gender')
-                    ->options([
-                        'L' => 'Laki - Laki',
-                        'P' => 'Perempuan',
-                    ]),
             ])
             ->actions([
                 EditAction::make(),

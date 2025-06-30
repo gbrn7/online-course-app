@@ -13,7 +13,13 @@ class EditStudent extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\DeleteAction::make()->label('Hapus Mahasiswa'),
         ];
+    }
+
+    
+    public function getTitle(): string
+    {
+        return 'Edit Mahasiswa'; // Your custom page title
     }
 }
