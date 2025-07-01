@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('thumbnail');
+            $table->boolean('is_active')->default(true);
             $table->integer('meeting_number');
             $table->string('youtube_link')->nullable();
             $table->text('content');

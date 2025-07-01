@@ -17,6 +17,7 @@ class CourseSeeder extends Seeder
             [
                 "title" => "Pembelajaran Anak Hambatan Pendengaran",
                 "thumbnail" => "default-thumbnail.jpg",
+                "is_active" => true,
                 "meeting_number" => "1",
                 'youtube_link' => "https://youtu.be/BSOPUdzTQ6Y?si=1GFMtNo12sAlthrO",
                 'content' => "content",
@@ -27,6 +28,7 @@ class CourseSeeder extends Seeder
             [
                 "title" => "Bagaimana Mengatasi Berbagai Permasalahan yang Timbul Akibat Ketunarunguan",
                 "thumbnail" => "default-thumbnail.jpg",
+                "is_active" => true,
                 "meeting_number" => "2",
                 'youtube_link' => "https://youtu.be/BSOPUdzTQ6Y?si=1GFMtNo12sAlthrO",
                 'content' => "content",

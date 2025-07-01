@@ -7,9 +7,11 @@ use App\Models\Course;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -28,6 +30,10 @@ class CourseResource extends Resource
     {
         return $form
             ->schema([
+                TextInput::make('title')
+                    ->required()
+                    ->columnSpanFull()
+                    ->label('Judul'),
                 FileUpload::make('thumbnail')
                     ->image()
                     ->imageEditor()
@@ -37,13 +43,14 @@ class CourseResource extends Resource
                         '16:9',
                     ])
                     ->label('Gambar Thumbnail'),
-                TextInput::make('title')
-                    ->required()
-                    ->label('Judul'),
                 TextInput::make('meeting_number')
                     ->required()
                     ->label('Pertemuan ke-')
                     ->integer(),
+                Toggle::make('is_active')
+                    ->required()
+                    ->default(true)
+                    ->label('Status Aktif'),
                 TextInput::make('youtube_link')
                     ->required()
                     ->url()
@@ -75,6 +82,9 @@ class CourseResource extends Resource
                 TextColumn::make('title')
                     ->label('Judul')
                     ->searchable(),
+                IconColumn::make('is_active')
+                    ->label('Status Aktif')
+                    ->boolean(),
                 TextColumn::make('meeting_number')
                     ->label('Pertemuan ke-'),
                 TextColumn::make('youtube_link')
