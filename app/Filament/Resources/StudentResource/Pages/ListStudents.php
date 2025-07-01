@@ -36,8 +36,6 @@ class ListStudents extends ListRecords
                 ])
                 ->action(function (array $data) {
                     $file = public_path('storage/' . $data['import_file']);
-
-
                     try {
                         Excel::import(new StudentsImport, $file);
 
