@@ -15,6 +15,7 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Joaopaulolndev\FilamentPdfViewer\Forms\Components\PdfViewerField;
 
 class CourseResource extends Resource
 {
@@ -22,6 +23,7 @@ class CourseResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
+    protected static ?int $navigationSort = 1;
 
     protected static ?string $navigationLabel = 'Materi';
 
@@ -67,6 +69,10 @@ class CourseResource extends Resource
                     ->required()
                     ->label('Konten')
                     ->columnSpanFull(),
+                PdfViewerField::make('module_file')
+                    ->label('PDF')
+                    ->columnSpanFull()
+                    ->minHeight('40svh'),
             ]);
     }
 

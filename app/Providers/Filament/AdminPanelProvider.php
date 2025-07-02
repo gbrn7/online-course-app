@@ -2,6 +2,10 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Widgets\LatestCourse;
+use App\Filament\Widgets\LatestNews;
+use App\Filament\Widgets\LatestStudent;
+use App\Filament\Widgets\StatDashboard;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -11,6 +15,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
+use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -38,8 +43,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+                StatDashboard::class,
+                LatestStudent::class,
+                LatestNews::class,
+                LatestCourse::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -61,6 +68,7 @@ class AdminPanelProvider extends PanelProvider
                     ->setNavigationLabel('Profil Saya')
                     ->setSort(5)
                     ->setIcon('heroicon-o-user-circle')
-            ]);
+            ])
+            ->spa();
     }
 }

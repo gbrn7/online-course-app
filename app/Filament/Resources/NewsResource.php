@@ -23,6 +23,8 @@ class NewsResource extends Resource
 
     protected static ?string $navigationLabel = 'Berita';
 
+    protected static ?int $navigationSort = 3;
+
     protected static ?string $modelLabel = "Berita ";
 
     public static function form(Form $form): Form
