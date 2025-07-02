@@ -22,6 +22,7 @@ class CourseResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
+
     protected static ?string $navigationLabel = 'Materi';
 
     protected static ?string $modelLabel = "Materi ";
@@ -98,7 +99,7 @@ class CourseResource extends Resource
                     ->limit(10)
                     ->url(fn(Course $record): string => asset('storage/' . $record->module_file))
                     ->openUrlInNewTab(),
-                TextColumn::make('updated_at')
+                TextColumn::make('created_at')
                     ->label('Tanggal')
                     ->dateTime('d/M/Y'),
             ])
