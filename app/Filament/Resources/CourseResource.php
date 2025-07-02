@@ -81,6 +81,7 @@ class CourseResource extends Resource
             ->columns([
                 TextColumn::make('title')
                     ->label('Judul')
+                    ->limit(20)
                     ->searchable(),
                 IconColumn::make('is_active')
                     ->label('Status Aktif')
@@ -88,9 +89,18 @@ class CourseResource extends Resource
                 TextColumn::make('meeting_number')
                     ->label('Pertemuan ke-'),
                 TextColumn::make('youtube_link')
-                    ->label('Link Youtube'),
+                    ->label('Link Video')
+                    ->limit(10)
+                    ->url(fn(Course $record): string => $record->youtube_link)
+                    ->openUrlInNewTab(),
+                TextColumn::make('module_file')
+                    ->label('Materi')
+                    ->limit(10)
+                    ->url(fn(Course $record): string => asset('storage/' . $record->module_file))
+                    ->openUrlInNewTab(),
                 TextColumn::make('updated_at')
-                    ->label('Updated At'),
+                    ->label('Tanggal')
+                    ->dateTime('d/M/Y'),
             ])
             ->filters([
                 //
@@ -98,6 +108,7 @@ class CourseResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
