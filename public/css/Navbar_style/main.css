@@ -1,26 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;300;400;500;600;700;900&display=swap");
+
+.logo-brand {
+  max-width: 70px;
+}
+
+.second-text-logo {
+  font-size: 14px;
+}
+
 .navbar p {
   color: #2d4059;
 }
+
 .navbar span {
   color: #2d4059;
 }
+
 .navbar .dropdown-menu {
   background-color: #2d4059;
 }
+
 .navbar .dropdown-item:hover {
   background-color: #b14e56;
 }
+
 .navbar .img-avatar {
   height: 50px;
   width: 50px;
   border-radius: 100px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
+
 .navbar .logo-img-wrapper {
   width: 220px;
 }
+
 .navbar .logo-img-wrapper img {
   width: 100%;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

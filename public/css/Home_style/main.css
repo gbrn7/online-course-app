@@ -14,13 +14,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.logo-brand {
-  max-width: 70px;
-}
-
-.second-text-logo {
-  font-size: 14px;
-}
 
 .head-section {
   color: var(--main-color);
@@ -28,10 +21,6 @@
 
 .bg-main {
   background-color: var(--main-color);
-}
-
-.nav-item {
-  font-size: 18px;
 }
 
 .btn-cta {
@@ -266,7 +255,6 @@
   overflow: hidden;
   font-size: 15px;
 }
-
 
 .course .course-wrapper .row:nth-child(1) .title {
   font-weight: 700;

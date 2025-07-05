@@ -34,13 +34,14 @@ class NewsResource extends Resource
                 TextInput::make('title')
                     ->required()
                     ->label('Judul'),
-                RichEditor::make('content')
-                    ->required()
-                    ->label('Konten'),
                 Toggle::make('is_published')
                     ->required()
                     ->default(true)
                     ->label('Status Aktif'),
+                RichEditor::make('content')
+                    ->required()
+                    ->columnSpanFull()
+                    ->label('Konten'),
             ]);
     }
 

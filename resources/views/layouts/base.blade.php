@@ -17,7 +17,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="@yield('custom_css_link')" />
-  <link rel="stylesheet" href="{{asset('css/Home_style/main.css')}}" />
   <link rel="stylesheet" href="{{asset('css/Navbar_style/main.css')}}" />
 
   <!-- Link AOS -->

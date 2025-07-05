@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;300;400;500;600;700;900&display=swap");
+
+:root {
+  /* Font */
+  --main-font: 'Poppins', sans-serif;
+  /* Color */
+  --main-color: #fcc729;
+  --second-color: #337def;
+  --third-color: #232323;
+  --fourth-color: #bbb9b9;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.news-box-wrapper .news-box-wrap:hover .news-box {
+  border-color: var(--second-color) !important;
+}
+
+.news-box-wrapper .news-box-wrap .news-box .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 16px;
+}

@@ -14,10 +14,10 @@
     <div class="collapse navbar-collapse toggle" id="navbarNav">
       <ul class="navbar-nav ms-auto text-center text-lg-start mt-4 mb-4 mb-lg-0 mt-lg-0 d-flex align-items-center">
         <li class="nav-item mt-3 mt-lg-0">
-          <a class="nav-link" href="#home">Beranda</a>
+          <a class="nav-link" href={{route('home')}}>Beranda</a>
         </li>
         <li class="nav-item mt-3 mt-lg-0">
-          <a class="nav-link" href="#service">Informasi</a>
+          <a class="nav-link" href={{route('information')}}>Informasi</a>
         </li>
         <li class="nav-item mt-3 mt-lg-0">
           @if (Auth::guard('student')->check())
