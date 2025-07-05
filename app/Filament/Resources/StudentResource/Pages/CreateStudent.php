@@ -15,7 +15,7 @@ class CreateStudent extends CreateRecord
         return 'Tambah Mahasiswa'; // Your custom page title
     }
 
-        protected function getRedirectUrl(): string
+    protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
     }

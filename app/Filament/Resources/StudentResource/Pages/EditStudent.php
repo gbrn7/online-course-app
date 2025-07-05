@@ -17,7 +17,12 @@ class EditStudent extends EditRecord
         ];
     }
 
-    
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+
     public function getTitle(): string
     {
         return 'Edit Mahasiswa'; // Your custom page title
