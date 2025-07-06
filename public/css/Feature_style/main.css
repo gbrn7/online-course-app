@@ -14,7 +14,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.content-up {
+.one-page {
   min-height: 100dvh;
 }
 
@@ -32,4 +32,42 @@
 
 .bg-main {
   background-color: var(--main-color);
+}
+
+.course .course-wrapper .row:nth-child(1) .head {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.course .course-wrapper .course-box-wrap .img-wrapper {
+  height: 250px;
+  overflow: hidden;
+}
+
+.course .course-wrapper .course-box-wrap .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.course .course-wrapper .row:nth-child(1) .title {
+  font-weight: 700;
+}
+
+.course .course-wrapper .row:nth-child(2) .desc {
+  font-size: 18px;
+}
+
+.course-box-wrap:hover {
+  border-color: var(--second-color) !important;
+}
+
+.course-box-wrap:hover .title {
+  color: var(--second-color) !important;
+}
+
+.sub-title-course {
+  font-size: 14px;
 }

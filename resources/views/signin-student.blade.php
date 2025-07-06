@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MOOC UNJ | SignIn</title>
+  <title>MOOC UNJ | Login</title>
   <!-- Icon -->
   <link rel="icon" type="image/x-icon" href="{{asset('img/logo_UNJ.png')}}" />
 
@@ -44,7 +44,7 @@
             </div>
             @endif
           </div>
-          <form id="form-tag" action={{route('signIn.auth')}} method="post">
+          <form id="form-tag" action={{route('login.auth')}} method="post">
             @csrf
             <div class="login-form d-flex flex-column gap-1 gap-lg-3 mt-3">
               <div class="nim-input-wrapper">

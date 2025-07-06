@@ -39,10 +39,10 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route('home');
+        return redirect()->intended('home');
     }
 
-    public function signOut(Request $request)
+    public function logout(Request $request)
     {
         Auth::guard('student')->logout();
 
@@ -50,7 +50,7 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('signIn')->with('toast_success', 'Log out sukses');
+        return redirect()->route('home')->with('toast_success', 'Log out sukses');
     }
 
     public function editProfile()

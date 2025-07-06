@@ -21,7 +21,7 @@ class StudentPageController extends Controller
     public function information()
     {
         $news = News::OrderBy('id', 'desc')
-            ->paginate(10);
+            ->paginate(9);
 
         return view('information', ['news' => $news]);
     }
@@ -33,5 +33,20 @@ class StudentPageController extends Controller
         if (!$news) return back();
 
         return view('information-detail', ['news' => $news]);
+    }
+
+    public function courses()
+    {
+        $courses = Course::OrderBy('id', 'desc')
+            ->paginate(9);
+
+        return view('course', ['courses' => $courses]);
+    }
+
+    public function detailCourse($ID)
+    {
+        $course = Course::find($ID);
+
+        return view('course-detail', compact('course'));
     }
 }

@@ -11,13 +11,14 @@
     <div class="row align-items-center">
       <div class="content-left col-12 col-lg-6 text-center text-lg-start" data-aos="fade-right"
         data-aos-duration="1500">
-        <h1 class="heading">Selamat Datang di MOOC Universitas Negeri Jakarta</h1>
-        <p class="subHeading"> Melalui kursus daring ini, Anda akan belajar strategi
+        <h1 class="heading text-center text-lg-start">Selamat Datang di MOOC Universitas Negeri Jakarta</h1>
+        <p class="subHeading text-center text-lg-start"> Melalui kursus daring ini, Anda akan belajar strategi
           pembelajaran, komunikasi, dan
           pendekatan untuk mendukung tumbuh kembang anak Tunarungu di lingkungannya.
         </p>
         <div class="cursor-pointer mt-2">
-          <a href="#" class="text-white start-study-btn text-decoration-none btn-cta rounded-3 p-2">Mulai
+          <a href={{route('courses')}}
+            class="text-white start-study-btn text-decoration-none btn-cta rounded-3 p-2">Mulai
             Belajar</a>
         </div>
       </div>
@@ -80,7 +81,7 @@
   <div class="container banner-wrapper">
     <div class="row row-1 align-items-center">
       <div class="col-12 col-lg-5 column-1">
-        <img src={{asset('img/banner-1.jpg')}} class="img-fluid w-100 rounded rounded-3" data-aos="zoom-in"
+        <img src={{asset('img/banner-1.jpg')}} class="img-fluid w-100 rounded rounded-3" data-aos="fade-right"
           data-aos-duration="800" />
       </div>
       <div class="col-12 col-lg-7 column-2 text-center text-lg-start">
@@ -107,27 +108,28 @@
     <div class="row row-1 align-items-center">
       <div class="row">
         <div class="col-12 text-center">
-          <p class="head-section mb-0 mb-2" data-aos="fade-up" data-aos-duration="800">
+          <p class="head-section mb-0 mb-2" data-aos="fade-up" data-aos-duration="300">
             Materi
           </p>
-          <h1 class="title m-0 mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+          <h1 class="title m-0 mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
             Materi Pembelajaran
           </h1>
         </div>
       </div>
       <div class="row text-center justify-content-center">
-        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300" data-aos-duration="300">
           <p class="desc">
             Materi disusun untuk mendukung Pembelajaran Anak dengan Hambatan Pendengaran
           </p>
         </div>
       </div>
-      <div class="row row-3 justify-content-center align-items-center mt-3">
+      <div class="row row-3 justify-content-center align-items-center mt-3" data-aos="fade-up" data-aos-delay="400"
+        data-aos-duration="300">
         @forelse ($courses as $course)
         <div class="col-12 col-md-6 col-lg-4 p-2 course-box-wrapper">
-          <a href="#"
-            class="w-100 text-black p-0 text-decoration-none border rounded rounded-3 course-box-wrap d-flex flex-column flex-wrap justify-content-center align-items-center"
-            data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
+          <a href={{route('courses.detail', $course->id)}}
+            class="w-100 text-black p-0 text-decoration-none border rounded rounded-3 course-box-wrap d-flex flex-column
+            flex-wrap justify-content-center align-items-center">
             <div class="img-wrapper">
               <img src={{asset('storage/'.$course->thumbnail)}} class="img-fluid">
             </div>
@@ -144,6 +146,12 @@
           <p class="text-secondary fw-semibold">Materi Tidak Ditemukan</p>
         </div>
         @endforelse
+        @if (count($courses)>0)
+        <div class="col-12 p-2 course-box-wrapper text-center">
+          <a href={{route('courses')}} class="text-secondary fw-semibold">Selengkapnya <i
+              class="ri-arrow-right-line"></i></a>
+        </div>
+        @endif
       </div>
     </div>
   </div>

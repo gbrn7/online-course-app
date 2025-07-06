@@ -14,13 +14,18 @@
     <div class="collapse navbar-collapse toggle" id="navbarNav">
       <ul class="navbar-nav ms-auto text-center text-lg-start mt-4 mb-4 mb-lg-0 mt-lg-0 d-flex align-items-center">
         <li class="nav-item mt-3 mt-lg-0">
-          <a class="nav-link" href={{route('home')}}>Beranda</a>
+          <a @class(['nav-link', 'active'=> Route::is('home')]) href={{route('home')}}>Beranda</a>
         </li>
         <li class="nav-item mt-3 mt-lg-0">
-          <a class="nav-link" href={{route('information')}}>Informasi</a>
+          <a @class(['nav-link', 'active'=> request()->is('information') ||request()->is('information/*')])
+            href={{route('information')}}>Informasi</a>
+        </li>
+        @if (Auth::guard('student')->check())
+        <li class="nav-item mt-3 mt-lg-0">
+          <a @class(['nav-link', 'active'=> request()->is('courses') ||request()->is('courses/*')])
+            href={{route('courses')}}>Materi</a>
         </li>
         <li class="nav-item mt-3 mt-lg-0">
-          @if (Auth::guard('student')->check())
           <div class="dropdown" data-cy="btn-dropdown-account">
             <a class="nav-link d-flex gap-2 pt-3 pt-md-0 align-items-center justify-content-end dropdown-toggle"
               href="user-edit-profile.html" role="button" aria-current="page" data-bs-toggle="dropdown"
@@ -40,7 +45,7 @@
                   data-cy="btn-edit-account"><i class="ri-user-3-line me-2 text-white"></i>Edit Profil</a>
               </li>
               <li class="rounded-2 dropdown-list">
-                <form id="form-tag" action={{route('signOut')}} method="POST">
+                <form id="form-tag" action={{route('logout')}} method="POST">
                   @csrf
                   <button data-cy="btn-logout" type="submit" class="dropdown-item btn-submit rounded-2 text-white"><i
                       class="ri-logout-circle-line me-2 text-white"></i>Log Out</button>
@@ -48,14 +53,16 @@
               </li>
             </ul>
           </div>
-          @else
-          <a href={{route('signIn')}}
+        </li>
+        @else
+        <li class="nav-item mt-3 mt-lg-0">
+          <a href={{route('login')}}
             class="login-link navbar-text text-decoration-none d-flex align-items-center gap-1">
             <i class="ri-login-circle-line"></i>
             Log In
           </a>
-          @endif
         </li>
+        @endif
       </ul>
     </div>
   </div>
