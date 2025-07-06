@@ -14,6 +14,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.content-up {
+  min-height: 100dvh;
+}
+
 .news-box-wrapper .news-box-wrap:hover .news-box {
   border-color: var(--second-color) !important;
 }
@@ -24,4 +28,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 16px;
+}
+
+.bg-main {
+  background-color: var(--main-color);
 }

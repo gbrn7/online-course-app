@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light position-relative">
   <div class="container-lg">
-    <a class="navbar-brand d-flex gap-2 align-items-center" href="#">
+    <a class="navbar-brand d-flex gap-2 align-items-center" href={{route('home')}}>
       <img src={{asset('img/logo_UNJ.png')}} class="logo-brand">
       <div>
         <p class="mb-0 fw-bold">MOOC</p>
@@ -36,11 +36,11 @@
                 </p>
               </li>
               <li class="rounded-2 dropdown-list my-profile">
-                <a class="dropdown-item text-white rounded-2" href="" data-cy="btn-edit-account"><i
-                    class="ri-user-3-line me-2 text-white"></i>Edit Profil</a>
+                <a class="dropdown-item text-white rounded-2" href={{route('editProfile')}}
+                  data-cy="btn-edit-account"><i class="ri-user-3-line me-2 text-white"></i>Edit Profil</a>
               </li>
               <li class="rounded-2 dropdown-list">
-                <form id="form-tag" action="" method="POST">
+                <form id="form-tag" action={{route('signOut')}} method="POST">
                   @csrf
                   <button data-cy="btn-logout" type="submit" class="dropdown-item btn-submit rounded-2 text-white"><i
                       class="ri-logout-circle-line me-2 text-white"></i>Log Out</button>
@@ -49,7 +49,8 @@
             </ul>
           </div>
           @else
-          <a href="{{''}}" class="login-link navbar-text text-decoration-none d-flex align-items-center gap-1">
+          <a href={{route('signIn')}}
+            class="login-link navbar-text text-decoration-none d-flex align-items-center gap-1">
             <i class="ri-login-circle-line"></i>
             Log In
           </a>

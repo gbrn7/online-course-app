@@ -4,6 +4,16 @@
   max-width: 70px;
 }
 
+:root {
+  /* Font */
+  --main-font: 'Poppins', sans-serif;
+  /* Color */
+  --main-color: #fcc729;
+  --second-color: #337def;
+  --third-color: #232323;
+  --fourth-color: #bbb9b9;
+}
+
 .second-text-logo {
   font-size: 14px;
 }
@@ -21,7 +31,7 @@
 }
 
 .navbar .dropdown-item:hover {
-  background-color: #b14e56;
+  background-color: var(--second-color);
 }
 
 .navbar .img-avatar {

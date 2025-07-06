@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;300;400;500;600;700;900&display=swap");
 
-*{
+* {
   font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
   height: 100dvh;
   overflow: hidden;
 }
@@ -15,8 +15,8 @@ body{
   overflow-x: hidden;
 }
 
-.copyright{
-    font-size: 12px;
+.copyright {
+  font-size: 12px;
 }
 
 .header h1 {
@@ -26,34 +26,39 @@ body{
   letter-spacing: -0.07em;
   color: #000000;
 }
+
 @media (max-width: 575.98px) {
-  .header h1  {
-      font-size: 20px;
+  .header h1 {
+    font-size: 20px;
   }
 
-  .w-sm-75{
+  .w-sm-75 {
     width: 75%;
+  }
+
+  .copyright {
+    font-size: 10px;
   }
 }
 
-.link-text{
+.link-text {
   font-size: 14px;
   color: black;
 }
 
-.link-text:hover{
+.link-text:hover {
   text-decoration: underline !important;
 
 }
 
-.signin-box{
-/* From https://css.glass */
-background: rgba(255, 255, 255, 0.33);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5.5px);
--webkit-backdrop-filter: blur(5.5px);
-border: 1px solid rgba(255, 255, 255, 0.23);
+.signin-box {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(255, 255, 255, 0.23);
 }
 
 .login-form label {
@@ -74,21 +79,21 @@ border: 1px solid rgba(255, 255, 255, 0.23);
 
 }
 
-.eye-pass{
+.eye-pass {
   right: 10px;
   top: 3px;
   cursor: pointer;
 }
 
-.password-container{
+.password-container {
   position: relative;
 }
 
-.pass-wrapper{
+.pass-wrapper {
   position: relative;
 }
 
-.link-wrapper a{
+.link-wrapper a {
   font-size: 14px;
 }
 
@@ -100,10 +105,10 @@ border: 1px solid rgba(255, 255, 255, 0.23);
   top: 4px;
 }
 
-.header-logo{
+.header-logo {
   max-width: 60px;
 }
-  
+
 
 .login-form span {
   font-style: normal;
@@ -117,11 +122,11 @@ border: 1px solid rgba(255, 255, 255, 0.23);
 .login-form .login-btn {
   font-weight: 600;
   font-size: 20px;
-  background-color: #EA5455;
-  color: white;  
+  background-color: #fcc729;
+  color: white;
 }
 
-.login-right .auth-footer{
+.login-right .auth-footer {
   font-size: 12px;
 }
 
@@ -132,43 +137,49 @@ border: 1px solid rgba(255, 255, 255, 0.23);
   border-radius: 41px;
 }
 
-@media (max-width: 1400px){
-    .login-img {
-        margin-left: -90px;
-    }
+@media (max-width: 1400px) {
+  .login-img {
+    margin-left: -90px;
   }
+}
 
 @media (max-width: 575.98px) {
-.header-logo{
+  .header-logo {
     max-width: 50px;
-    }
-
-    .link-wrapper a{
-      font-size: 11px;
-    }
-
-  .header h1  {
-      font-size: 24px;
   }
+
+  .link-wrapper a {
+    font-size: 11px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
   .pass-icon {
-      width: 15px;
-      height: 15px;
-      right: 6px;
-      top: 8px;
+    width: 15px;
+    height: 15px;
+    right: 6px;
+    top: 8px;
   }
-  .login-form label{
-      font-size: 10px;
+
+  .login-form label {
+    font-size: 10px;
   }
+
   .login-form input {
-      font-size: 10px;
+    font-size: 10px;
   }
+
   .login-form span {
-      font-size: 8px;
+    font-size: 8px;
   }
-  .login-form .login-btn{
-      font-size: 12px;
+
+  .login-form .login-btn {
+    font-size: 12px;
   }
-  .login-right .auth-footer{
+
+  .login-right .auth-footer {
     font-size: 10px;
   }
 }

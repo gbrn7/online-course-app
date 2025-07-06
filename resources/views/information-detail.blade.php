@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Home')
+@section('title', 'Detail Informasi')
 
 @section('custom_css_link', asset('css/Feature_style/main.css'))
 
@@ -10,6 +10,8 @@
     <div class="row">
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-decoration-none text-black" href={{route('home')}}>Beranda</a>
+          </li>
           <li class="breadcrumb-item"><a class="text-decoration-none text-black"
               href={{route('information')}}>Informasi</a>
           </li>

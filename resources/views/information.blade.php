@@ -1,11 +1,18 @@
 @extends('layouts.base')
 
-@section('title', 'Home')
+@section('title', 'Informasi')
 
 @section('custom_css_link', asset('css/Feature_style/main.css'))
 
 @section('main-content')
 <section class="service" id="service">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a class="text-decoration-none text-black" href={{route('home')}}>Beranda</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Informasi</li>
+    </ol>
+  </nav>
   <div class="container service-wrapper">
     <div class="row">
       <div class="col-12 text-center">

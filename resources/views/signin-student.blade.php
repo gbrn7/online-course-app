@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MOOC UNJ | @yield('title')</title>
+  <title>MOOC UNJ | SignIn</title>
   <!-- Icon -->
-  <link rel="icon" type="image/x-icon" href="{{asset('img/jti_logo.png')}}" />
+  <link rel="icon" type="image/x-icon" href="{{asset('img/logo_UNJ.png')}}" />
 
   <!-- CSS Bootsrap-->
   <link rel="stylesheet" href="{{asset('vendor/bootstrap-5.2/css/bootstrap.min.css')}}" />
@@ -23,42 +23,41 @@
 </head>
 
 <body>
-  {{-- Preloader --}}
-  @include('preloader.index')
-
   <section class="login row justify-content-between">
-    <div class="content-left col-lg-7 d-none d-lg-block h-100" style="
-          background: url('@yield('background_url')');
-          background-size: cover;
-          background-position-x: @yield('bg-position-x', 'center');
-          background-position-y: @yield('bg-position-y', 'center');
-        "></div>
-    <div class="col-lg-5 col-12 h-100 content-right">
+    <div class="h-100 content-right">
       <div class="row justify-content-center align-items-center h-100">
-        <div class="border border-2 signin-box p-3 p-sm-4 rounded rounded-5 col-8 col-md-6">
+        <div class="border border-2 signin-box p-3 p-sm-4 rounded rounded-5 col-7 col-lg-4 col-xl-3">
           <div class="header">
             <div class="text-center">
-              <div class="logo-wrapper d-flex gap-3 justify-content-center">
-                <img src="{{asset('img/jti_logo.png')}}" class="header-logo" />
-                <img src="{{asset('img/polinema_logo.png')}}" class="header-logo" />
+              <div class="logo-wrapper d-flex justify-content-center">
+                <img src="{{asset('img/logo_UNJ.png')}}" class="header-logo" />
               </div>
-              <h1 class="my-0 mt-4 fs-4 fw-normal" data-cy="title">@yield('title')</h1>
+              <h1 class="my-0 mt-4 fs-4 fw-normal" data-cy="title">Sign In Mahasiswa</h1>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger mt-1">
+              <ul>
+                @foreach ($errors->all() as $message)
+                <li>{{ $message }}</li>
+                @endforeach
+              </ul>
+            </div>
+            @endif
           </div>
-          <form id="form-tag" action="@yield('form_action')" method="post">
+          <form id="form-tag" action={{route('signIn.auth')}} method="post">
             @csrf
             <div class="login-form d-flex flex-column gap-1 gap-lg-3 mt-3">
-              <div class="username-input-wrapper">
-                <input name="username" data-cy="input-username" value="{{old('email')}}" class="form-control text-black"
-                  id="username" placeholder="Enter your username" />
-                @error('username')
+              <div class="nim-input-wrapper">
+                <input name="nim" data-cy="input-nim" value="{{old('nim')}}" class="form-control text-black" id="nim"
+                  placeholder="Masukkan Nim Anda" />
+                @error('nim')
                 <small class="form-text mt-1 text-danger">{{ $message }}</small>
                 @enderror
               </div>
               <div class="password-container position-relative">
                 <div class="pass-wrapper">
                   <input name="password" data-cy="input-password" type="password" class="form-control" id="password"
-                    placeholder="Enter your password" />
+                    placeholder="Masukkan Password Anda" />
                   <i class="ri-eye-close-fill pass-icon eye-pass position-absolute"></i>
                 </div>
               </div>
@@ -68,7 +67,8 @@
             </div>
           </form>
           <div class="auth-footer text-center text-secondary mt-1">
-            <span class="copyright">Copyright ©{{date('Y')}},MOOC UNJ</span>
+            <span class="copyright">Copyright ©{{date('Y')}}, Sistem Pembelajaran Anak dengan Hambatan
+              Pendengaran</span>
           </div>
         </div>
       </div>

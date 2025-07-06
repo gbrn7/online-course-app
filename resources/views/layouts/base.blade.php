@@ -37,8 +37,6 @@
     </div>
 
   </div>
-
-
 </body>
 <footer class="text-center bg-main footer p-2">
   <div class="container d-flex justify-content-between">
