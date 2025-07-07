@@ -12,7 +12,7 @@
       <div class="content-left col-12 col-lg-6 text-center text-lg-start" data-aos="fade-right"
         data-aos-duration="1500">
         <h1 class="heading text-center text-lg-start">Selamat Datang di MOOC Universitas Negeri Jakarta</h1>
-        <p class="subHeading text-center text-lg-start"> Melalui kursus daring ini, Anda akan belajar strategi
+        <p class="subHeading text-center text-lg-start"> Melalui Pembelajaran daring ini, Anda akan belajar strategi
           pembelajaran, komunikasi, dan
           pendekatan untuk mendukung tumbuh kembang anak Tunarungu di lingkungannya.
         </p>
@@ -86,7 +86,7 @@
       </div>
       <div class="col-12 col-lg-7 column-2 text-center text-lg-start">
         <h1 class="title mt-4" data-aos="fade-down" data-aos-delay="200" data-aos-duration="800">
-          Mengapa Anda Perlu Mengikuti Kursus Ini?
+          Mengapa Anda Perlu Mengikuti Pembelajaran Ini?
         </h1>
         <p class="desc banner-desc" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
           Anak dengan hambatan pendengaran menghadapi tantangan dalam memahami komunikasi verbal, berinteraksi sosial,

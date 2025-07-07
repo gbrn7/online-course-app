@@ -22,7 +22,7 @@ class LatestNews extends BaseWidget
             ->columns([
                 TextColumn::make('title')->label('Judul'),
                 IconColumn::make('is_published')->boolean()->label('Status Aktif'),
-                TextColumn::make('created_at')->label('Tanggal'),
+                TextColumn::make('created_at')->label('Tanggal')->dateTime('d/M/Y'),
             ]);
     }
 

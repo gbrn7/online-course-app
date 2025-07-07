@@ -32,9 +32,9 @@ class StudentResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('email')->required()->email()->unique(),
+                TextInput::make('email')->required()->email()->unique(ignoreRecord: true),
                 TextInput::make('password')->password()->required(),
-                TextInput::make('nim')->unique()->required()->label('NIM'),
+                TextInput::make('nim')->unique(ignoreRecord: true)->required()->label('Nim'),
                 TextInput::make('name')->required()->label('Nama'),
             ]);
     }

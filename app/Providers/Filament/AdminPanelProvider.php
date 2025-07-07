@@ -61,6 +61,8 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->favicon(asset('img/logo_UNJ.png'))
+            ->font('Poppins')
             ->plugins([
                 FilamentEditProfilePlugin::make()->slug('my-profile')
                     ->setTitle('Profil Saya')

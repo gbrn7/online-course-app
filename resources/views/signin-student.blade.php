@@ -67,7 +67,7 @@
             </div>
           </form>
           <div class="auth-footer text-center text-secondary mt-1">
-            <span class="copyright">Copyright ©{{date('Y')}}, Sistem Pembelajaran Anak dengan Hambatan
+            <span class="copyright">Copyright ©{{date('Y')}} <br> Sistem Pembelajaran Anak dengan Hambatan
               Pendengaran</span>
           </div>
         </div>

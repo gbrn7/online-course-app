@@ -12,7 +12,7 @@
     <li class="breadcrumb-item active" aria-current="page">Edit Profil</li>
   </ol>
 </nav>
-<div class="main-content mt-3">
+<div class="main-content mt-3 one-page">
   @if ($errors->any())
   <div class="alert alert-danger mt-1">
     <ul>

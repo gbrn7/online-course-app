@@ -22,6 +22,11 @@
   border-color: var(--second-color) !important;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 .news-box-wrapper .news-box-wrap .news-box .title {
   display: -webkit-box;
   -webkit-line-clamp: 2;
