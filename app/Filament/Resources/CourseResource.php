@@ -61,7 +61,7 @@ class CourseResource extends Resource
                     ->label('Link Video Youtube'),
                 FileUpload::make('module_file')
                     ->acceptedFileTypes(['application/pdf'])
-                    ->maxSize(1636)
+                    ->maxSize(5120)
                     ->required()
                     ->label('File Modul (PDF)'),
                 RichEditor::make('content')
