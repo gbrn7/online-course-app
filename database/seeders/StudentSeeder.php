@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Student;
-use App\Support\Enums\GenderTypeEnum;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class StudentSeeder extends Seeder

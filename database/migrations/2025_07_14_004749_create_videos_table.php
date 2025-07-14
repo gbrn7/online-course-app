@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('label');
-            $table->string('youtube_link');
+            $table->string('google_drive_link');
             $table->timestamps();
         });
     }

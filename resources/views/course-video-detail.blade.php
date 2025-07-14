@@ -33,8 +33,7 @@
       </div>
       <div class="col-12 border rounded-2 py-3 px-2 ratio ratio-16x9" data-aos="fade-up" data-aos-delay="400"
         data-aos-duration="200">
-        <iframe src="https://www.youtube.com/embed/{{ $video->youtube_id }}" title="YouTube video"
-          allowfullscreen></iframe>
+        <iframe src="{{ $video->embed_link }}" title="YouTube video" allowfullscreen></iframe>
       </div>
     </div>
   </div>

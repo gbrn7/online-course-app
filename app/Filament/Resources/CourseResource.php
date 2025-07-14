@@ -59,12 +59,11 @@ class CourseResource extends Resource
                     ->maxSize(5120)
                     ->required()
                     ->label('File Modul (PDF)'),
-                TextInput::make('youtube_link')
+                TextInput::make('google_drive_link')
                     ->url()
                     ->nullable()
-                    ->label('Link Video Youtube (Opsional)'),
+                    ->label('Link Video Google Drive Can View Permission (Opsional)'),
                 RichEditor::make('content')
-                    ->required()
                     ->required()
                     ->label('Konten')
                     ->columnSpanFull(),
@@ -94,10 +93,10 @@ class CourseResource extends Resource
                     ->boolean(),
                 TextColumn::make('meeting_number')
                     ->label('Pertemuan ke-'),
-                TextColumn::make('youtube_link')
+                TextColumn::make('google_drive_link')
                     ->label('Link Video')
                     ->limit(10)
-                    ->url(fn(Course $record): ?string => $record->youtube_link)
+                    ->url(fn(Course $record): ?string => $record->google_drive_link)
                     ->openUrlInNewTab(),
                 TextColumn::make('module_file')
                     ->label('Materi')

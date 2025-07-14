@@ -29,11 +29,11 @@ class VideoCourseResource extends Resource
             ->schema([
                 TextInput::make('label')
                     ->required(),
-                TextInput::make('youtube_link')
+                TextInput::make('google_drive_link')
                     ->required()
                     ->url()
                     ->required()
-                    ->label('Link Video Youtube'),
+                    ->label('Link Video Google Drive (Can View Permission)'),
             ]);
     }
 
@@ -42,10 +42,10 @@ class VideoCourseResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('label'),
-                TextColumn::make('youtube_link')
+                TextColumn::make('google_drive_link')
                     ->label('Link Video')
                     ->limit(10)
-                    ->url(fn(Video $record): ?string => $record->youtube_link)
+                    ->url(fn(Video $record): ?string => $record->google_drive_link)
                     ->openUrlInNewTab(),
                 TextColumn::make('created_at')
                     ->label('Tanggal')

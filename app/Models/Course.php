@@ -19,20 +19,18 @@ class Course extends Model
         return Carbon::parse($this->created_at)->translatedFormat('j F Y');
     }
 
-    public function getYoutubeIdAttribute(): ?string
+    public function getEmbedLinkAttribute(): ?string
     {
-        if (! $this->youtube_link) {
+        if (!$this->google_drive_link) {
             return null;
         }
 
-        // Match various formats of YouTube URL
-        $pattern = '%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i';
-
-        if (preg_match($pattern, $this->youtube_link, $matches)) {
-            return $matches[1]; // Return the video ID
+        if (preg_match('/\/file\/d\/([^\/]+)\//', $this->google_drive_link, $matches)) {
+            $fileId = $matches[1];
+            return "https://drive.google.com/file/d/{$fileId}/preview";
         }
 
-        return null;
+        return null; // or return the original link
     }
 
     public function getDocumentFilenameAttribute()
@@ -43,6 +41,6 @@ class Course extends Model
             return collect($data)->first(); // returns the first value
         }
 
-        return null;
+        return $this->module_file;
     }
 }

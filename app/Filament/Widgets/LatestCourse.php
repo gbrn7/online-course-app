@@ -38,7 +38,7 @@ class LatestCourse extends BaseWidget
                 TextColumn::make('module_file')
                     ->label('Materi')
                     ->limit(10)
-                    ->url(fn(Course $record): string => asset('storage/' . $record->module_file))
+                    ->url(fn(Course $record): string => asset('storage/' . $record->getDocumentFilenameAttribute()))
                     ->openUrlInNewTab(),
                 TextColumn::make('created_at')
                     ->label('Tanggal')
