@@ -17,8 +17,8 @@ class LatestNews extends BaseWidget
             ->query(
                 News::query()
                     ->latest('created_at')
-                    ->take(10)
             )
+            ->paginationPageOptions([5])
             ->columns([
                 TextColumn::make('title')->label('Judul'),
                 IconColumn::make('is_published')->boolean()->label('Status Aktif'),

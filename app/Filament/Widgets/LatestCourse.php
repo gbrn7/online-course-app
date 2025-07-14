@@ -3,7 +3,6 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Course;
-use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -25,8 +24,8 @@ class LatestCourse extends BaseWidget
             ->query(
                 Course::query()
                     ->latest('created_at')
-                    ->take(10)
             )
+            ->paginationPageOptions([5])
             ->columns([
                 TextColumn::make('title')
                     ->label('Judul')
@@ -36,11 +35,6 @@ class LatestCourse extends BaseWidget
                     ->boolean(),
                 TextColumn::make('meeting_number')
                     ->label('Pertemuan ke-'),
-                TextColumn::make('youtube_link')
-                    ->label('Link Video')
-                    ->limit(10)
-                    ->url(fn(Course $record): string => $record->youtube_link)
-                    ->openUrlInNewTab(),
                 TextColumn::make('module_file')
                     ->label('Materi')
                     ->limit(10)

@@ -21,8 +21,8 @@ class LatestStudent extends BaseWidget
             ->query(
                 Student::query()
                     ->latest('created_at')
-                    ->take(10)
             )
+            ->paginationPageOptions([5])
             ->columns([
                 TextColumn::make('nim')
                     ->label('NIM')

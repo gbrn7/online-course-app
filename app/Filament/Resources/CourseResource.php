@@ -54,16 +54,16 @@ class CourseResource extends Resource
                     ->required()
                     ->default(true)
                     ->label('Status Aktif'),
-                TextInput::make('youtube_link')
-                    ->required()
-                    ->url()
-                    ->nullable()
-                    ->label('Link Video Youtube'),
                 FileUpload::make('module_file')
                     ->acceptedFileTypes(['application/pdf'])
                     ->maxSize(5120)
                     ->required()
                     ->label('File Modul (PDF)'),
+                TextInput::make('youtube_link')
+                    ->required()
+                    ->url()
+                    ->nullable()
+                    ->label('Link Video Youtube (Opsional)'),
                 RichEditor::make('content')
                     ->required()
                     ->required()
@@ -95,11 +95,6 @@ class CourseResource extends Resource
                     ->boolean(),
                 TextColumn::make('meeting_number')
                     ->label('Pertemuan ke-'),
-                TextColumn::make('youtube_link')
-                    ->label('Link Video')
-                    ->limit(10)
-                    ->url(fn(Course $record): string => $record->youtube_link)
-                    ->openUrlInNewTab(),
                 TextColumn::make('module_file')
                     ->label('Materi')
                     ->limit(10)
