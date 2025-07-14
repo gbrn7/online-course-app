@@ -95,6 +95,11 @@ class CourseResource extends Resource
                     ->boolean(),
                 TextColumn::make('meeting_number')
                     ->label('Pertemuan ke-'),
+                TextColumn::make('youtube_link')
+                    ->label('Link Video')
+                    ->limit(10)
+                    ->url(fn(Course $record): ?string => $record->youtube_link)
+                    ->openUrlInNewTab(),
                 TextColumn::make('module_file')
                     ->label('Materi')
                     ->limit(10)
