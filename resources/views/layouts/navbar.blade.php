@@ -26,6 +26,10 @@
             href={{route('courses')}}>Materi</a>
         </li>
         <li class="nav-item mt-3 mt-lg-0">
+          <a @class(['nav-link', 'active'=> request()->is('video-courses') ||request()->is('video-courses/*')])
+            href={{route('videoCourses')}}>Materi Video</a>
+        </li>
+        <li class="nav-item mt-3 mt-lg-0">
           <div class="dropdown" data-cy="btn-dropdown-account">
             <a class="nav-link d-flex gap-2 pt-3 pt-md-0 align-items-center justify-content-end dropdown-toggle"
               href="user-edit-profile.html" role="button" aria-current="page" data-bs-toggle="dropdown"

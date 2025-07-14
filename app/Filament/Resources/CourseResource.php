@@ -60,7 +60,6 @@ class CourseResource extends Resource
                     ->required()
                     ->label('File Modul (PDF)'),
                 TextInput::make('youtube_link')
-                    ->required()
                     ->url()
                     ->nullable()
                     ->label('Link Video Youtube (Opsional)'),
@@ -121,7 +120,8 @@ class CourseResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->emptyStateHeading('Data Materi Tidak Ditemukan');
     }
 
     public static function getPages(): array

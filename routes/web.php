@@ -18,4 +18,6 @@ Route::group(['middleware' => ['auth:student']], function () {
     Route::put('/editProfile/{ID}', [AuthController::class, 'updateProfile'])->name('editProfile.updateProfile');
     Route::get('/courses', [StudentPageController::class, 'courses'])->name('courses');
     Route::get('/courses/{ID}', [StudentPageController::class, 'detailCourse'])->name('courses.detail');
+    Route::get('/video-courses', [StudentPageController::class, 'videoCourses'])->name('videoCourses');
+    Route::get('/video-courses/{ID}', [StudentPageController::class, 'videoDetailCourse'])->name('videoCourses.detail');
 });

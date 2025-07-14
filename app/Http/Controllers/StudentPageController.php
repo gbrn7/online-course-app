@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\News;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class StudentPageController extends Controller
@@ -48,5 +49,20 @@ class StudentPageController extends Controller
         $course = Course::find($ID);
 
         return view('course-detail', compact('course'));
+    }
+
+    public function videoCourses()
+    {
+        $videos = Video::OrderBy('id', 'desc')
+            ->paginate(9);
+
+        return view('course-video', ['videos' => $videos]);
+    }
+
+    public function videoDetailCourse($ID)
+    {
+        $video = Video::find($ID);
+
+        return view('course-video-detail', compact('video'));
     }
 }

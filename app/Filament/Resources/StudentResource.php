@@ -26,7 +26,7 @@ class StudentResource extends Resource
 
     protected static ?string $modelLabel = "Mahasiswa ";
 
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
@@ -65,7 +65,8 @@ class StudentResource extends Resource
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->emptyStateHeading('Data Mahasiswa Tidak Ditemukan');
     }
 
     public static function getRelations(): array

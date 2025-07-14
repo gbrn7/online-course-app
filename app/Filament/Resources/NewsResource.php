@@ -23,7 +23,7 @@ class NewsResource extends Resource
 
     protected static ?string $navigationLabel = 'Berita';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 4;
 
     protected static ?string $modelLabel = "Berita ";
 
@@ -77,7 +77,8 @@ class NewsResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->emptyStateHeading('Data Berita Tidak Ditemukan');
     }
 
     public static function getRelations(): array
