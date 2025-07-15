@@ -38,8 +38,7 @@ class StudentPageController extends Controller
 
     public function courses()
     {
-        $courses = Course::OrderBy('id', 'desc')
-            ->paginate(9);
+        $courses = Course::paginate(9);
 
         return view('course', ['courses' => $courses]);
     }
@@ -53,8 +52,7 @@ class StudentPageController extends Controller
 
     public function videoCourses()
     {
-        $videos = Video::OrderBy('id', 'desc')
-            ->paginate(9);
+        $videos = Video::paginate(9);
 
         return view('course-video', ['videos' => $videos]);
     }
